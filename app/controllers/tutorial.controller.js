@@ -57,7 +57,7 @@ exports.findOne = (req, res) => {
         res.status(404).send({ message: "Not found Tutorial with id " + id });
       else res.send(data);
     })
-    .catch(err => {
+    .catch(() => {
       res
         .status(500)
         .send({ message: "Error retrieving Tutorial with id=" + id });
@@ -82,7 +82,7 @@ exports.update = (req, res) => {
         });
       } else res.send({ message: "Tutorial was updated successfully." });
     })
-    .catch(err => {
+    .catch(() => {
       res.status(500).send({
         message: "Error updating Tutorial with id=" + id
       });
@@ -105,7 +105,7 @@ exports.delete = (req, res) => {
         });
       }
     })
-    .catch(err => {
+    .catch(() => {
       res.status(500).send({
         message: "Could not delete Tutorial with id=" + id
       });
